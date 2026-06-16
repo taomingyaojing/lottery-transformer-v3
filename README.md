@@ -1,6 +1,6 @@
 # 🎯 Lottery Transformer V3
 
-基于Transformer的彩票预测模型（6平码+1特码），支持多窗口投票集成。
+基于Transformer的彩票预测模型（6平码+1特码），支持多窗口投票集成和HTTP API网关。
 
 ## 架构
 
@@ -22,10 +22,11 @@ V3 核心模型: Transformer 8层 (512d, 8头, FFN 2048)
 
 ```
 lottery-v3-open/
-├── train.py             # V3核心训练
+├── train.py             # V3核心训练（数据增强）
 ├── train_enhanced.py    # V3+增强训练（冷热度融合）
-├── infer.py             # V3+推理 + 回测
+├── infer.py             # V3+推理 + 系统回测
 ├── ensemble_train.py    # 4模型集成训练
+├── gateway.py           # RESTful API 预测网关
 ├── data/
 │   └── lottery_history.csv  # 历史开奖数据 (31列)
 ├── model_output/        # 训练好的模型权重
@@ -52,6 +53,13 @@ python3 infer.py
 
 # 集成训练
 python3 ensemble_train.py
+
+# 启动预测网关
+python3 gateway.py
+#   GET  /health        - 健康检查
+#   POST /predict       - 运行预测 (v3/enhanced/ensemble)
+#   GET  /history       - 历史预测
+#   GET  /backtest      - 回测统计
 ```
 
 ## 依赖
