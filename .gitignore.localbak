@@ -1,0 +1,6 @@
+ft_xgb_lottery.py
+run_all_prediction.py
+lottery_v3_package.tar.gz
+lottery_backup_data/
+lottery_backup_model/
+lottery_backup_scripts/
