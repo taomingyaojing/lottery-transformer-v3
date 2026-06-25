@@ -1,6 +1,32 @@
+# 数据文件
+data/*.csv
+*.tar.gz
+latest_2days.txt
+test_data.txt
+
+# 模型输出
+models/*/best_model.pth
+models/*/*_best.pth
+models/*/*_final.pth
+models/v3/model_output*
+ensemble/ensemble_output*
+
+# 预测结果
+predictions/*.json
+
+# 备份
+lottery_backup_*
+*.bak
+
+# 临时文件
+lottery_data_*.txt
+lottery_fresh_*.txt
 __pycache__/
 *.pyc
-model_output/
-ensemble_output/
-predictions/
-data/
+
+# 第三方
+vllm/
+PhantomDroid*/
+
+# 旧根目录脚本（保留备份但不上传）
+# 新代码在 models/ ensemble/ scripts/ pipeline/ 下

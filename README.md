@@ -80,22 +80,22 @@ pandas >= 1.4
 
 ```bash
 # 1. 训练V3模型
-python3 train.py
+python3 models/v3/train.py
 
 # 2. 训练XGBoost
-python3 ft_xgb_lottery.py
+python3 models/xgb/train.py
 
 # 3. 一键预测（需先训练好模型）
-python3 run_all_prediction.py
+python3 ensemble/predict_v1.py
 
 # 4. V2 Ensemble（含LLM）
-python3 run_all_prediction_v2.py
+python3 ensemble/predict.py
 
 # 5. 自动化流程
-python3 daily_lottery_pipeline.py
+python3 pipeline/daily.py
 
 # 6. 数据更新
-python3 update_lottery_data.py <数据文件>
+python3 scripts/data/update.py <数据文件>
 ```
 
 ## 📤 输出格式
